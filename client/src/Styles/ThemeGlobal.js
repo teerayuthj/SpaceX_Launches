@@ -10,5 +10,13 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
 export const AppWarp = styled.div`
-  text-align: center;
+  background-color: ${props => props.theme.dark};
+  color: ${props => props.theme.white};
 `;
+
+export const ThemeStyle = {
+  white: "#FFFFFF",
+  red: "#FC0404",
+  dark: "#2C2F33",
+  black: "#23272A"
+};
