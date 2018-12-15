@@ -2,12 +2,12 @@ import React from "react";
 
 export default function Mission() {
   return (
-    <div className="my-3">
+    <div>
       <p>
-        <span className="px-3 mr-2 bg-success" /> = Success
+        <span /> = Success
       </p>
       <p>
-        <span className="px-3 mr-2 bg-danger" /> = Fail
+        <span /> = Fail
       </p>
     </div>
   );

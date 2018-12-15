@@ -5,6 +5,8 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import SpaceXlogo from "./SpaceXlogo.png";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle, AppWarp } from "./Styles/ThemeGlobal";
 
 const client = new ApolloClient({
   uri: "http://localhost:5000/graphql"
@@ -15,22 +17,33 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
         <Router>
-          <div className="container">
-            <a href="/">
-              <img
-                src={SpaceXlogo}
-                alt="SpaceX"
-                style={{
-                  width: 300,
-                  display: "block",
-                  margin: "auto",
-                  marginBottom: "10px"
-                }}
-              />
-            </a>
-            <Route exact path="/" component={Launches} />
-            <Route exact path="/launch/:flight_number" component={Launch} />
-          </div>
+          <React.Fragment>
+            <ThemeProvider theme={{ fontFamily: "Roboto" }}>
+              <AppWarp>
+                <GlobalStyle />
+                <div>
+                  <a href="/">
+                    <img
+                      src={SpaceXlogo}
+                      alt="SpaceX"
+                      style={{
+                        width: 300,
+                        display: "block",
+                        margin: "auto",
+                        marginBottom: "10px"
+                      }}
+                    />
+                  </a>
+                  <Route exact path="/" component={Launches} />
+                  <Route
+                    exact
+                    path="/launch/:flight_number"
+                    component={Launch}
+                  />
+                </div>
+              </AppWarp>
+            </ThemeProvider>
+          </React.Fragment>
         </Router>
       </ApolloProvider>
     );
