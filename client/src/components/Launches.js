@@ -6,8 +6,8 @@ import Mission from "./Mission";
 import Links from "./Links";
 
 const LAUNCHES_QUERY = gql`
-  query LaunchesQuery {
-    launches {
+  query LaunchesQuery($flight_number: Int!) {
+    launches(flight_number: $flight_number) {
       flight_number
       mission_name
       launch_date_local
@@ -33,12 +33,22 @@ export class Launches extends Component {
             if (loading) return <h4>Loading...</h4>;
             if (error) console.log(error);
 
+            const {
+              mission_name,
+              launch_date_local,
+              launch_success,
+              links: { mission_patch },
+              launches_site: { site_name_long }
+            } = data.launches;
+
             return (
-              <Fragment>
-                {data.launches.map(launch => (
-                  <Links key={launch.flight_number} launch={launch} />
-                ))}
-              </Fragment>
+              <Links
+                mission_patch={mission_patch}
+                mission_name={mission_name}
+                launch_date_lacal={launch_date_local}
+                site_name_long={site_name_long}
+                launch_success={launch_success}
+              />
             );
           }}
         </Query>
