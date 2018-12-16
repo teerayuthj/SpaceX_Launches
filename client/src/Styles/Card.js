@@ -41,9 +41,22 @@ export const Dates = styled.div`
 `;
 
 export const LuanchSite = styled.div`
-  padding-left: 10px;
+  padding: 10px;
   font-size: 14px;
-  font-style: inherit;
-  font-weight: inherit;
-  font-weight: 100;
+`;
+
+export const LuanchSuccess = styled.button`
+  border-style: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 2px;
+  margin: 10px;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 3px;
+  display: block;
+  cursor: pointer;
+  outline: none;
+  color: ${props => props.theme.white};
+  background-color: ${props => props.theme.red};
 `;
