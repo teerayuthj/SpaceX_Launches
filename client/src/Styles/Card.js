@@ -46,17 +46,26 @@ export const LuanchSite = styled.div`
 `;
 
 export const LuanchSuccess = styled.button`
-  border-style: none;
+  border: 0;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-weight: 700;
+  position: relative;
+  vertical-align: middle;
   font-size: 18px;
   font-weight: 600;
   padding: 2px;
   margin: 10px;
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 2rem;
   border-radius: 3px;
-  display: block;
   cursor: pointer;
-  outline: none;
-  color: ${props => props.theme.white};
-  background-color: ${props => props.theme.red};
+`;
+
+export const Success = styled.div`
+  background-color: green;
+`;
+
+export const Fail = styled.div`
+  background-color: red;
 `;
