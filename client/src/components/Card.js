@@ -6,13 +6,17 @@ import {
   Mission,
   Dates,
   LuanchSuccess,
+  Null,
   Success,
   Fail
-} from "../Styles/Card";
+} from "../Styles/Cards";
 import { ThemeProvider } from "styled-components";
 import { ThemeStyle } from "../Styles/ThemeGlobal";
 import Moment from "react-moment";
-import { Link } from "react-router-dom";
+import { BrowserRouter, Link, NavLink } from "react-router-dom";
+import Radium from "radium";
+
+const RadiumLink = Radium(NavLink);
 
 export default function Card({
   launch: {
@@ -26,14 +30,24 @@ export default function Card({
 }) {
   return (
     <ThemeProvider theme={ThemeStyle}>
-      <ItemCard component={Link} to={`/launch/${flight_number}`}>
-        <Img src={mission_patch} alt="" />
-        <Mission>{mission_name}</Mission>
-        <Dates>
-          <Moment format="HH:mm:ss DD-MM-YYYY ">{launch_date_local}</Moment>
-        </Dates>
-        <LuanchSite>{site_name_long}</LuanchSite>
-        <LuanchSuccess>{launch_success ? <Success /> : <Fail />}</LuanchSuccess>
+      <ItemCard>
+        <RadiumLink to={`/launch/${flight_number}`}>
+          <Img src={mission_patch} alt="" />
+          <Mission>{mission_name}</Mission>
+          <Dates>
+            <Moment format="HH:mm:ss DD-MM-YYYY ">{launch_date_local}</Moment>
+          </Dates>
+          <LuanchSite>Launch site : {site_name_long}</LuanchSite>
+          <LuanchSuccess>
+            {launch_success === null ? (
+              <Null>Null</Null>
+            ) : launch_success ? (
+              <Success>Success</Success>
+            ) : (
+              <Fail>Fail</Fail>
+            )}
+          </LuanchSuccess>
+        </RadiumLink>
       </ItemCard>
     </ThemeProvider>
   );

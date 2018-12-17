@@ -16,7 +16,9 @@ export const AppWarp = styled.div`
 
 export const ThemeStyle = {
   white: "#FFFFFF",
-  red: "#FC0404",
+  red: "#8B0000",
   dark: "#2C2F33",
-  black: "#23272A"
+  black: "#23272A",
+  green: "#43b581",
+  purple: "#6441a5"
 };

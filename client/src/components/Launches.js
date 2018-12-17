@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 //import Item from "./Item";
-import Mission from "./Mission";
 import Card from "./Card";
 
 const LAUNCHES_QUERY = gql`
@@ -27,7 +26,6 @@ export class Launches extends Component {
     return (
       <Fragment>
         <h1>Launches</h1>
-        <Mission />
         <Query query={LAUNCHES_QUERY}>
           {({ loading, error, data }) => {
             if (loading) return <h4>Loading...</h4>;

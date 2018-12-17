@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ItemCard = styled.div`
   width: 17rem;
-  height: 28rem;
+  height: 28.5rem;
   display: flex;
   flex-direction: column;
   color: ${props => props.theme.white};
@@ -12,9 +12,6 @@ export const ItemCard = styled.div`
   background: ${props => props.theme.black};
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.12),
     0 2px 1px -2px rgba(0, 0, 0, 0.2);
-  -webkit-box-direction: normal;
-  -webkit-box-flex: 1;
-  -webkit-box-orient: vertical;
 
   :hover {
     box-shadow: 0 6px 12px 1px rgba(0, 0, 0, 0.25);
@@ -45,27 +42,39 @@ export const LuanchSite = styled.div`
   font-size: 14px;
 `;
 
-export const LuanchSuccess = styled.button`
-  border: 0;
-  box-sizing: border-box;
-  font-size: inherit;
-  font-weight: 700;
-  position: relative;
-  vertical-align: middle;
-  font-size: 18px;
-  font-weight: 600;
-  padding: 2px;
-  margin: 10px;
-  width: 4rem;
-  height: 2rem;
+export const LuanchSuccess = styled.div`
+  font-size: 21px;
+  font-weight: 500;
+  text-align: center;
+  padding: 4px;
+  margin: 8px 5px;
+  width: 5.5rem;
+  height: 1.6rem;
   border-radius: 3px;
   cursor: pointer;
+  color: ${props => props.theme.white};
+`;
+
+export const Null = styled.div`
+  background-color: ${props => props.theme.purple};
+  border-radius: 3px;
+  width: 5.5rem;
+  height: 1.6rem;
+  padding: 3px;
 `;
 
 export const Success = styled.div`
-  background-color: green;
+  background-color: ${props => props.theme.green};
+  border-radius: 3px;
+  padding: 3px;
+  width: 5.5rem;
+  height: 1.6rem;
 `;
 
 export const Fail = styled.div`
-  background-color: red;
+  background-color: ${props => props.theme.red};
+  border-radius: 3px;
+  width: 5.5rem;
+  height: 1.6rem;
+  padding: 3px;
 `;
