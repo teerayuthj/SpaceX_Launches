@@ -5,9 +5,9 @@ export const ItemCard = styled.div`
   height: 28.5rem;
   display: flex;
   flex-direction: column;
-  color: ${props => props.theme.white};
   border-radius: 4px;
   margin: 1.5rem 2rem;
+  color: ${props => props.theme.white};
   transition: box-shadow 0.5s;
   background: ${props => props.theme.black};
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.12),

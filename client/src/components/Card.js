@@ -13,10 +13,7 @@ import {
 import { ThemeProvider } from "styled-components";
 import { ThemeStyle } from "../Styles/ThemeGlobal";
 import Moment from "react-moment";
-import { BrowserRouter, Link, NavLink } from "react-router-dom";
-import Radium from "radium";
-
-const RadiumLink = Radium(NavLink);
+import { Link } from "react-router-dom";
 
 export default function Card({
   launch: {
@@ -31,7 +28,10 @@ export default function Card({
   return (
     <ThemeProvider theme={ThemeStyle}>
       <ItemCard>
-        <RadiumLink to={`/launch/${flight_number}`}>
+        <Link
+          to={`/launch/${flight_number}`}
+          style={{ textDecoration: "none", color: "white" }}
+        >
           <Img src={mission_patch} alt="" />
           <Mission>{mission_name}</Mission>
           <Dates>
@@ -47,7 +47,7 @@ export default function Card({
               <Fail>Fail</Fail>
             )}
           </LuanchSuccess>
-        </RadiumLink>
+        </Link>
       </ItemCard>
     </ThemeProvider>
   );
