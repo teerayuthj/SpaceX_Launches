@@ -14,6 +14,7 @@ import { ThemeProvider } from "styled-components";
 import { ThemeStyle } from "../Styles/ThemeGlobal";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
+import ImgMissionPatch from "./ImgMissionPatch";
 
 export default function Card({
   launch: {
@@ -32,7 +33,9 @@ export default function Card({
           to={`/launch/${flight_number}`}
           style={{ textDecoration: "none", color: "white" }}
         >
-          <Img src={mission_patch} alt="" />
+          <Img>
+            <ImgMissionPatch src={mission_patch} />
+          </Img>
           <Mission>{mission_name}</Mission>
           <Dates>
             <Moment format="HH:mm:ss DD-MM-YYYY ">{launch_date_local}</Moment>

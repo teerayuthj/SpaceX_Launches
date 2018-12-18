@@ -3,7 +3,7 @@ import Launches from "./components/Launches";
 import Launch from "./components/Launch";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-import SpaceXlogo from "./SpaceXlogo.png";
+import SpaceXlogo from "./img/SpaceXlogo.png";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle, AppWarp, ThemeStyle } from "./Styles/ThemeGlobal";

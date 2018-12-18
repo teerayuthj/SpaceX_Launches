@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const ItemCard = styled.div`
   width: 17rem;
-  height: 28.5rem;
+  height: auto;
+  min-height: 30.5rem;
   display: flex;
   flex-direction: column;
   border-radius: 4px;
@@ -47,11 +48,11 @@ export const LuanchSuccess = styled.div`
   font-weight: 500;
   text-align: center;
   padding: 4px;
-  margin: 8px 5px;
+  margin: 12px 5px;
   width: 5.5rem;
   height: 1.6rem;
   border-radius: 3px;
-  cursor: pointer;
+  margin-top: 2.4rem;
   color: ${props => props.theme.white};
 `;
 
