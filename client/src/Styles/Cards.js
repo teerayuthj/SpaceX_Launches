@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const ItemCard = styled.div`
   width: 17rem;
+  flex-grow: initial;
   height: auto;
   min-height: 30.5rem;
   display: flex;
-  flex-direction: column;
   border-radius: 4px;
-  margin: 1.5rem 2rem;
+  margin: 1rem;
   color: ${props => props.theme.white};
   transition: box-shadow 0.5s;
   background: ${props => props.theme.black};

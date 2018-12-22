@@ -2,7 +2,8 @@ import React, { Component, Fragment } from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import { Link } from "react-router-dom";
-import classNames from "classnames";
+import Loading from "./Loading";
+import { Containers } from "../Styles/Details";
 
 const LAUNCH_QUERY = gql`
   query LaunchQuery($flight_number: Int!) {
@@ -17,6 +18,7 @@ const LAUNCH_QUERY = gql`
         rocket_name
         rocket_type
       }
+      details
     }
   }
 `;
@@ -29,7 +31,7 @@ export class Launch extends Component {
       <Fragment>
         <Query query={LAUNCH_QUERY} variables={{ flight_number }}>
           {({ loading, error, data }) => {
-            if (loading) return <h4>Loading...</h4>;
+            if (loading) return <Loading />;
             if (error) console.log(error);
 
             const {
@@ -37,40 +39,39 @@ export class Launch extends Component {
               flight_number,
               launch_year,
               launch_success,
-              rocket: { rocket_id, rocket_name, rocket_type }
+              rocket: { rocket_id, rocket_name, rocket_type },
+              details
             } = data.launch;
 
             return (
-              <div>
+              <Containers>
                 <h1>
-                  <span>Mission: </span> {mission_name}
+                  <span>Mission: {mission_name}</span>
                 </h1>
+
                 <h4>Launch Detail</h4>
                 <ul>
                   <li>Flight Number: {flight_number}</li>
                   <li>Launch Yaer: {launch_year}</li>
                   <li>
                     Launch Successful:
-                    <span
-                      className={classNames({
-                        "text-success": launch_success,
-                        "text-danger": !launch_success
-                      })}
-                    >
-                      {launch_success ? "Yes" : "No"}
-                    </span>
+                    <span>{launch_success ? "Yes" : "No"}</span>
                   </li>
                 </ul>
+                <p>Detail : {details}</p>
 
                 <h4>Rocket Detail</h4>
+
                 <ul>
                   <li>Rocket ID: {rocket_id}</li>
                   <li>Rocket Name: {rocket_name}</li>
                   <li>Rocket Type: {rocket_type}</li>
                 </ul>
-                <hr />
-                <Link to="/">Back</Link>
-              </div>
+
+                <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+                  Back
+                </Link>
+              </Containers>
             );
           }}
         </Query>

@@ -7,10 +7,11 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         font-family: ${props => props.theme.fontFamily};
+        background: #2C2F33;
     }
 `;
 export const AppWarp = styled.div`
-  background-color: ${props => props.theme.dark};
+  margin: 0;
   color: ${props => props.theme.white};
 `;
 

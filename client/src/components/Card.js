@@ -1,7 +1,6 @@
 import React from "react";
 import {
   ItemCard,
-  Img,
   LuanchSite,
   Mission,
   Dates,
@@ -14,7 +13,7 @@ import { ThemeProvider } from "styled-components";
 import { ThemeStyle } from "../Styles/ThemeGlobal";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
-import ImgMissionPatch from "./ImgMissionPatch";
+import ImgonError from "./ImgonError";
 
 export default function Card({
   launch: {
@@ -33,12 +32,10 @@ export default function Card({
           to={`/launch/${flight_number}`}
           style={{ textDecoration: "none", color: "white" }}
         >
-          <Img>
-            <ImgMissionPatch src={mission_patch} />
-          </Img>
+          <ImgonError Src={mission_patch} />
           <Mission>{mission_name}</Mission>
           <Dates>
-            <Moment format="HH:mm:ss DD-MM-YYYY ">{launch_date_local}</Moment>
+            <Moment format="HH:mm:ss DD-MM-YYYY">{launch_date_local}</Moment>
           </Dates>
           <LuanchSite>Launch site : {site_name_long}</LuanchSite>
           <LuanchSuccess>
