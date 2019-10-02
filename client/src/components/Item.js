@@ -14,7 +14,7 @@ export default function Item({
             {mission_name}
           </h4>
           <p>
-            Data: <Moment format="DD-MM-YYYY HH:mm">{launch_date_local}</Moment>
+            <Moment format="DD-MM-YYYY HH:mm">{launch_date_local}</Moment>
           </p>
         </div>
         <div>

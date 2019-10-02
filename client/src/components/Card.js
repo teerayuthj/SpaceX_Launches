@@ -35,7 +35,8 @@ export default function Card({
           <ImgonError Src={mission_patch} />
           <Mission>{mission_name}</Mission>
           <Dates>
-            <Moment format="HH:mm:ss DD-MM-YYYY">{launch_date_local}</Moment>
+            Time:{" "}
+            <Moment format="HH:mm, DD-MM-YYYY">{launch_date_local}</Moment>
           </Dates>
           <LuanchSite>Launch site : {site_name_long}</LuanchSite>
           <LuanchSuccess>
