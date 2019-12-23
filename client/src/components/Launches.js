@@ -27,7 +27,7 @@ export class Launches extends Component {
   render() {
     return (
       <Fragment>
-        <Names>Launches</Names>
+        <Names>SpaceX Launches</Names>
         <Query query={LAUNCHES_QUERY}>
           {({ loading, error, data }) => {
             if (loading) return <Loading />;

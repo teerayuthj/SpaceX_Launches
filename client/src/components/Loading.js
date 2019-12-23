@@ -14,7 +14,7 @@ const Card = styled.div`
 const Img = styled.div`
   border-radius: 5px;
   width: 17rem;
-  height: auto;
+  height: 250px;
   min-height: 18rem;
   display: flex;
   border-radius: 4px;
@@ -37,43 +37,41 @@ const Mission = styled.div`
 const Dates = styled.p`
   border-radius: 5px;
   width: 10rem;
-  height: auto;
-  min-height: 1px;
+  height: 0.7rem;
   display: flex;
   border-radius: 4px;
   margin: 0.5rem 1rem 0.5rem 1rem;
   background: ${props => props.theme.black};
 `;
 
-const Sites = styled.div`
+const Sites = styled.p`
   border-radius: 5px;
-  width: 10rem;
-  height: auto;
-  min-height: 1px;
+  width: 16rem;
+  height: 1.2rem;
   display: flex;
   border-radius: 4px;
   margin: 0.5rem 1rem 0.5rem 1rem;
   background: ${props => props.theme.black};
 `;
 
-const Sucess = styled.div`
+const Status = styled.div`
   text-align: center;
   padding: 4px;
   margin: 12px 5px;
   width: 5.5rem;
-  height: 2rem;
+  height: 1.5rem;
   border-radius: 3px;
   margin-top: 2.4rem;
   display: flex;
-  margin: 2rem 1rem 0.5rem 1rem;
+  margin: 2rem 1rem 1.5rem 1rem;
   background: ${props => props.theme.black};
 `;
 
 const CardSkeleton = () => {
   return (
     <section>
-      <ul className="list">
-        {Array(9)
+      <Card>
+        {Array(16)
           .fill()
           .map((item, index) => (
             <div key={index}>
@@ -84,17 +82,17 @@ const CardSkeleton = () => {
                 <Skeleton height={30} width={`80%`} />
               </Mission>
               <Dates>
-                <Skeleton width={`10%`} />
+                <Skeleton width={`10%`} height={5} />
               </Dates>
               <Sites>
-                <Skeleton width={`80%`} />
+                <Skeleton width={`80%`} height={5} />
               </Sites>
-              <Sucess>
-                <Skeleton width={`90%`} height={30} />
-              </Sucess>
+              <Status>
+                <Skeleton width={`70%`} height={10} />
+              </Status>
             </div>
           ))}
-      </ul>
+      </Card>
     </section>
   );
 };

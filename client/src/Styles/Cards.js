@@ -23,7 +23,8 @@ export const ItemCard = styled.div`
 
 export const Img = styled.img`
   text-align: center;
-  width: 100%;
+  height: 250px;
+  width: auto;
 `;
 
 export const Mission = styled.div`
@@ -50,7 +51,7 @@ export const LuanchSuccess = styled.div`
   padding: 4px;
   margin: 12px 5px;
   width: 5.5rem;
-  height: 1.6rem;
+  height: 1.5rem;
   border-radius: 3px;
   margin-top: 2.4rem;
   color: ${props => props.theme.white};
@@ -60,7 +61,7 @@ export const Null = styled.div`
   background-color: ${props => props.theme.purple};
   border-radius: 3px;
   width: 5.5rem;
-  height: 1.6rem;
+  height: 1.5rem;
   padding: 3px;
 `;
 
@@ -69,13 +70,13 @@ export const Success = styled.div`
   border-radius: 3px;
   padding: 3px;
   width: 5.5rem;
-  height: 1.6rem;
+  height: 1.5rem;
 `;
 
 export const Fail = styled.div`
   background-color: ${props => props.theme.red};
   border-radius: 3px;
   width: 5.5rem;
-  height: 1.6rem;
+  height: 1.5rem;
   padding: 3px;
 `;
