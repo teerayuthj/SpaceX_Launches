@@ -1,54 +1,102 @@
 import React from "react";
-import classnames from "classnames";
 import styled from "styled-components";
 
-export default React.memo(styled(({ className }) => (
-  <div className={classnames("loader", className)}>
-    <span className="loader__ball loader__ball--1" />
-    <span className="loader__ball loader__ball--2" />
-    <span className="loader__ball loader__ball--3" />
-  </div>
-))`
+import Skeleton from "react-loading-skeleton";
+
+const Card = styled.div`
   display: flex;
-  position: absolute;
-  width: 100%;
-  height: 70%;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  padding: 0;
+`;
 
-  span.loader__ball {
-    display: inline-block;
-    margin: auto 0.25rem;
-    height: 0.75rem;
-    width: 0.75rem;
-    border-radius: 0.375rem;
-    background: #06c;
+const Img = styled.div`
+  border-radius: 5px;
+  width: 17rem;
+  height: auto;
+  min-height: 18rem;
+  display: flex;
+  border-radius: 4px;
+  margin: 0.5rem 1rem 1rem 1rem;
+  transition: box-shadow 0.5s;
+  background: ${props => props.theme.black};
+`;
 
-    &.loader__ball--1,
-    &.loader__ball--2,
-    &.loader__ball--3 {
-      animation: bulging 2s infinite ease-in-out;
-    }
+const Mission = styled.div`
+  border-radius: 5px;
+  width: 13rem;
+  height: auto;
+  min-height: 1rem;
+  display: flex;
+  border-radius: 4px;
+  margin: 0.5rem 1rem 0.5rem 1rem;
+  background: ${props => props.theme.black};
+`;
 
-    &.loader__ball--1 {
-      animation-delay: -0.4s;
-    }
+const Dates = styled.p`
+  border-radius: 5px;
+  width: 10rem;
+  height: auto;
+  min-height: 1px;
+  display: flex;
+  border-radius: 4px;
+  margin: 0.5rem 1rem 0.5rem 1rem;
+  background: ${props => props.theme.black};
+`;
 
-    &.loader__ball--2 {
-      animation-delay: -0.2s;
-    }
+const Sites = styled.div`
+  border-radius: 5px;
+  width: 10rem;
+  height: auto;
+  min-height: 1px;
+  display: flex;
+  border-radius: 4px;
+  margin: 0.5rem 1rem 0.5rem 1rem;
+  background: ${props => props.theme.black};
+`;
 
-    @keyframes bulging {
-      0%,
-      80%,
-      100% {
-        transform: scale(0);
-        opacity: 0.5;
-      }
-      40% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-  }
-`);
+const Sucess = styled.div`
+  text-align: center;
+  padding: 4px;
+  margin: 12px 5px;
+  width: 5.5rem;
+  height: 2rem;
+  border-radius: 3px;
+  margin-top: 2.4rem;
+  display: flex;
+  margin: 2rem 1rem 0.5rem 1rem;
+  background: ${props => props.theme.black};
+`;
+
+const CardSkeleton = () => {
+  return (
+    <section>
+      <ul className="list">
+        {Array(9)
+          .fill()
+          .map((item, index) => (
+            <div key={index}>
+              <Img>
+                <Skeleton height={250} />
+              </Img>
+              <Mission>
+                <Skeleton height={30} width={`80%`} />
+              </Mission>
+              <Dates>
+                <Skeleton width={`10%`} />
+              </Dates>
+              <Sites>
+                <Skeleton width={`80%`} />
+              </Sites>
+              <Sucess>
+                <Skeleton width={`90%`} height={30} />
+              </Sucess>
+            </div>
+          ))}
+      </ul>
+    </section>
+  );
+};
+
+export default CardSkeleton;

@@ -31,7 +31,8 @@ export class Launch extends Component {
       <Fragment>
         <Query query={LAUNCH_QUERY} variables={{ flight_number }}>
           {({ loading, error, data }) => {
-            if (loading) return <Loading />;
+            if (loading)
+              return <div style={{ textAlign: "center" }}>Loading...</div>;
             if (error) console.log(error);
 
             const {

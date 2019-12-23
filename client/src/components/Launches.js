@@ -36,8 +36,10 @@ export class Launches extends Component {
             return (
               <Fragment>
                 <Grid>
-                  {data.launches.map(launch => (
-                    <Card key={launch.flight_number} launch={launch} />
+                  {data.launches.map((launch, index) => (
+                    <section key={index}>
+                      <Card launch={launch} />
+                    </section>
                   ))}
                 </Grid>
               </Fragment>
