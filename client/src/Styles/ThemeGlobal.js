@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         font-family: ${props => props.theme.fontFamily};
-        background: #000000;
+        background: #0c0c0c;
     }
 `;
 export const AppWarp = styled.div`

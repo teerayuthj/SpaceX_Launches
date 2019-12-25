@@ -37,7 +37,8 @@ const LinksType = new GraphQLObjectType({
   name: "Links",
   fields: () => ({
     mission_patch: { type: GraphQLString },
-    video_link: { type: GraphQLString }
+    video_link: { type: GraphQLString },
+    youtube_id: { type: GraphQLString }
   })
 });
 

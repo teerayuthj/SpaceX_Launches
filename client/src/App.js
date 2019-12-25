@@ -30,8 +30,8 @@ class App extends Component {
                         style={{
                           width: 300,
                           display: "block",
-                          margin: "auto",
-                          marginBottom: "10px"
+                          marginBottom: "10px",
+                          marginTop: "20px"
                         }}
                       />
                     </a>

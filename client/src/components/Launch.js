@@ -18,6 +18,9 @@ const LAUNCH_QUERY = gql`
         rocket_type
       }
       details
+      links {
+        youtube_id
+      }
     }
   }
 `;
@@ -40,14 +43,24 @@ export class Launch extends Component {
               launch_year,
               launch_success,
               rocket: { rocket_id, rocket_name, rocket_type },
-              details
+              details,
+              links: { youtube_id }
             } = data.launch;
-
+            const videoYb = `https://www.youtube.com/embed/${youtube_id}`;
             return (
               <Containers>
                 <h1>
                   <span>Mission: {mission_name}</span>
                 </h1>
+                <iframe
+                  width="720"
+                  height="450"
+                  src={videoYb}
+                  frameBorder="0"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="SpaceX"
+                />
 
                 <h4>Launch Detail</h4>
                 <ul>

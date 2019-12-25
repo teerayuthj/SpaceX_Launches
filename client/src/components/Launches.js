@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
-import Card from "./Card";
+import LaunchesCard from "./LaunchesCard";
 import { Grid, Names } from "../Styles/GridContainer";
 import Loading from "./Loading";
 
@@ -34,15 +34,13 @@ export class Launches extends Component {
             if (error) console.log(error);
 
             return (
-              <Fragment>
-                <Grid>
-                  {data.launches.map((launch, index) => (
-                    <section key={index}>
-                      <Card launch={launch} />
-                    </section>
-                  ))}
-                </Grid>
-              </Fragment>
+              <Grid>
+                {data.launches.map((launch, index) => (
+                  <section key={index}>
+                    <LaunchesCard launch={launch} />
+                  </section>
+                ))}
+              </Grid>
             );
           }}
         </Query>
